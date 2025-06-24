@@ -1,0 +1,9 @@
+.producto{
+    border-radius: 10px;
+    background: linear-gradient(to right, rgb(211, 208, 208), grey);
+
+}
+
+.stockBajo{
+    background: linear-gradient(to right, white, red);
+}

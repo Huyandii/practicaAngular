@@ -1,0 +1,13 @@
+@if(producto){
+<article class="producto" [class.stockBajo]="producto.stock < 10">
+    <h3>{{producto.nombre}}</h3>
+    <div class="info">
+        <p>{{producto.precio}}</p>
+        <p>{{producto.departamento}}</p>
+        <p>{{producto.stock}}</p>
+    </div>
+    @if (producto.oferta) {
+        <label>OFERTA</label>
+    }
+</article>
+}

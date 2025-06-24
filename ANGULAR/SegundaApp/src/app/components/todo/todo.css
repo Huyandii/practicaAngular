@@ -1,0 +1,50 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+section:nth-child(1) {
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    height: 100px;
+    background-color: rgb(221, 218, 218);
+   
+    display: flex;
+
+    p {
+         border-radius: 20px;
+        width: 7%;
+        margin-right: 10px;
+        color: azure;
+        padding-inline: 10px;
+        background: linear-gradient(135deg, #007BFF, #ff0000, #FFA500, #FF6F00);
+        align-content: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    input {
+        padding-inline: 100px;
+        margin-right: 10px;
+    }
+
+    select {
+        padding-inline: 100px;
+
+    }
+
+    button {
+         border-radius: 20px;
+        margin-left: 440px;
+        color: aliceblue;
+        background: #ee2727;
+    }
+
+    button:hover {
+        background: radial-gradient(circle, #fceb03 0%, #ee2727 60%, #ff6363 100%);
+    }
+}
+
+

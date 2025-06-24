@@ -1,0 +1,28 @@
+<div>
+    <input [(ngModel)]="mensaje" type="text">
+    <p>{{mensaje}}</p>
+</div>
+
+
+
+<!-- NO USAMOS (de mmento) LA ETIQUETA FORM -->
+<div>
+    <div>
+        <label>nombre</label>
+        <input type="text" [(ngModel)]="contacto.nombre">
+    </div>
+    <div>
+        <label>email</label>
+        <input type="text" [(ngModel)]="contacto.email">
+    </div>
+    <div>
+        <label>Direccion</label>
+        <input type="text" [(ngModel)]="contacto.direcction">
+    </div>
+    <button>Enviar</button>
+</div>
+
+
+<pre>
+   {{contacto | json}}
+</pre>

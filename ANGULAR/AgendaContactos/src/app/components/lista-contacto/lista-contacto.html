@@ -1,0 +1,7 @@
+<div class="lista">
+    @for(cont of contactos; track $index){
+        <card-contacto [contacto]="cont"></card-contacto>
+    }@empty {
+        <h3>NO HAY CONTACTOS</h3>
+    }
+</div>

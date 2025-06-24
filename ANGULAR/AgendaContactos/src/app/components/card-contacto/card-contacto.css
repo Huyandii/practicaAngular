@@ -1,0 +1,10 @@
+.card-contacto {
+max-width: 400px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 16px;
+  color: white;
+  background: linear-gradient(135deg, #0077ff, #ffa500);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  font-family: sans-serif;
+}

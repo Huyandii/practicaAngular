@@ -1,0 +1,20 @@
+@if (nuevaTarea) {
+
+<div class="container">
+    <div>
+        <label class="form-label col-12">Nombre tarea</label>
+        <input type="text" [(ngModel)]="nuevaTarea.nombreTarea">
+    </div>
+
+    <div>
+        <label class="form-label col-12">Prioridad</label>
+        <input type="text" [(ngModel)]="nuevaTarea.prioridadTarea">
+    </div>
+
+    <button  (click)="onClick()" class="btn btn-info mt-4">Enviar</button>
+
+</div>
+<app-card-tarea [tarea]="nuevaTarea"></app-card-tarea>
+
+
+}

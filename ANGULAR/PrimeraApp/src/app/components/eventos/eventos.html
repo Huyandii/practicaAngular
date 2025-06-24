@@ -1,0 +1,25 @@
+
+<button (click)="manejarClick()">Pulsa</button>
+
+<div>
+    <button (click)="cambiarColor('red')">Rojo</button>
+    <button (click)="cambiarColor('green')">Verde</button>
+    <button (click)="cambiarColor('blue')">Azul</button>
+</div>
+
+
+
+
+
+<div>
+    <input type="text" (input)="guardarTexto($event)" (focus)="onFocus($event)" (blur)="onBlur()" >
+    <p>
+        {{contenidoParrafo}}
+    </p>
+</div>
+
+<div>
+    <input [type]="inputType">
+    <button (click)="onClickPassword()">ver password</button>
+
+</div>

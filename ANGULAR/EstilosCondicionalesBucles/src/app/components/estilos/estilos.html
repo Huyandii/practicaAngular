@@ -1,0 +1,25 @@
+<p [style]="estilosParrafo">Pula</p>
+<button (click)="modificarColor()">pulsa</button>
+
+
+
+<!-- 
+3 botones, cada uno un color del fondo del parrafo -->
+
+<button (click)="modificarFondo('red')">rojo</button>
+<button (click)="modificarFondo('green')">verde</button>
+<button (click)="modificarFondo('blue')">azul</button>
+
+<!-- Lo que se escriba en el campo de texto se asigna como color de texto en el parrafo -->
+
+<input  type="text" (input)="onInput($event)">
+
+<!-- un input de tipo range
+ modificamos qel tamaño de la funte en funcion de tipoi range -->
+
+<button (click)="isActivo = !isActivo">Toggle Activo</button>
+
+ <input type="range" (input)="rango($event)">
+
+ <p [class.activo]="isActivo">Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+

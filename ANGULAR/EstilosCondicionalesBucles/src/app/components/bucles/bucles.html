@@ -1,0 +1,32 @@
+<div class="lista_productos">
+    @for(prod of productos; track $index){ <!--tiene que tener un identificador unico, sino un $index-->
+    <div class="producto">
+
+        <h3> {{$index +1}}/{{productos.length}}-{{prod.nombre}}</h3>
+        <ul>
+            <li> precio:{{prod.precio}}</li>
+            <li>depatamento: {{prod.departamento}}</li>
+            <li>stock: {{prod.stock}}</li>
+        </ul>
+    </div>
+    }
+</div>
+
+
+
+<div class="container">
+
+    <table class="table">
+    @for (prod of productos; track $index) {
+    <tr>
+        <td>{{prod.nombre}}</td>
+        <td>Precio: {{prod.precio}}</td>
+        <td>departamento: {{prod.departamento}}</td>
+        <td>stock: {{prod.stock}}</td>
+        <td>disponibilidad: {{prod.disponible}}</td>
+        <td>oferta: {{prod.oferta}} </td>
+    </tr>
+}
+</table>
+</div>
+

@@ -1,0 +1,7 @@
+<div class="lista">
+    @for(tar of tareas; track $index){
+        <app-card-tarea [tarea]="tar"></app-card-tarea>
+    }@empty {
+        <h3>NO HAY TAREAS</h3>
+    }
+</div>
