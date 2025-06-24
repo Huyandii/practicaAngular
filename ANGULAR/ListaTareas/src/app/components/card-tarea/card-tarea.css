@@ -1,10 +1,29 @@
 .card-tarea {
-max-width: 400px;
+  max-width: 400px;
   margin: 20px auto;
   padding: 20px;
   border-radius: 16px;
   color: white;
-  background: linear-gradient(135deg, 0077ff, yellow, #f30800fb);
+   background: linear-gradient(135deg, rgb(5, 1, 255), #f30800fb);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
   font-family: sans-serif;
+
+}
+
+select {
+
+  .rojo {
+    background: linear-gradient(135deg, rgb(255, 166, 0), #f30800fb);
+  }
+
+  .amarillo {
+    background: linear-gradient(135deg, yellow, #f39200fb);
+  }
+
+  .verde {
+    background: linear-gradient(135deg, rgb(100, 255, 80), #1d6301fb);
+  }
+
+
+
 }

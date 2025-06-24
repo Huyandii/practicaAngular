@@ -8,7 +8,15 @@
 
     <div>
         <label class="form-label col-12">Prioridad</label>
-        <input type="text" [(ngModel)]="nuevaTarea.prioridadTarea">
+        <select class="seleccion">
+            <option value="app-card-tarea"   class="verde" [(ngModel)]="nuevaTarea.prioridadTarea">verde</option>
+            <option value="app-card-tarea"   class="amarillo" [(ngModel)]="nuevaTarea.prioridadTarea">amarillo</option>
+            <option value="app-card-tarea"  class="verde" [(ngModel)]="nuevaTarea.prioridadTarea">verde</option>
+
+        </select>
+
+
+        <!-- <input type="text" [(ngModel)]="nuevaTarea.prioridadTarea"> -->
     </div>
 
     <button  (click)="onClick()" class="btn btn-info mt-4">Enviar</button>
