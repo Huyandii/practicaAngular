@@ -1,0 +1,26 @@
+nav{
+    background: linear-gradient(123deg, red, rgb(255, 136, 0), blue );
+    height: 50px;
+    padding-top: 10px;
+}
+ul{
+    display: flex;
+    justify-content: space-around;
+}
+
+
+li{
+    color: bisque;
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition: 0.5s;
+}
+li:hover{
+    font-size: 20px;
+}
+
+.activo{
+    color: skyblue;
+
+    font-size: 20px;
+}

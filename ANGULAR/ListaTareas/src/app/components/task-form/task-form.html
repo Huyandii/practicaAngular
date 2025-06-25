@@ -8,10 +8,11 @@
 
     <div>
         <label class="form-label col-12">Prioridad</label>
-        <select class="seleccion">
-            <option value="app-card-tarea"   class="verde" [(ngModel)]="nuevaTarea.prioridadTarea">verde</option>
-            <option value="app-card-tarea"   class="amarillo" [(ngModel)]="nuevaTarea.prioridadTarea">amarillo</option>
-            <option value="app-card-tarea"  class="verde" [(ngModel)]="nuevaTarea.prioridadTarea">verde</option>
+        <select [(ngModel)]="nuevaTarea.prioridadTarea" class="seleccion">
+            
+            <option value="app-card-tarea"   class="rojo" >rojo</option>
+            <option value="app-card-tarea"   class="amarillo" >amarillo</option>
+            <option value="app-card-tarea"  class="verde" >verde</option>
 
         </select>
 

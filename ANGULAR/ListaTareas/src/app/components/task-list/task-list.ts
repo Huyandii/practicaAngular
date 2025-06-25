@@ -10,4 +10,8 @@ import { CardTarea } from "../card-tarea/card-tarea";
 })
 export class TaskList {
   @Input() tareas: ITarea[] = [];
+
+  delClick($index : number){
+    this.tareas.splice($index, 1)
+  }
 }

@@ -10,7 +10,6 @@ import { CardTarea } from "../card-tarea/card-tarea";
 })
 export class TaskForm {
   nuevaTarea: ITarea = { nombreTarea: '', prioridadTarea: '' }
-
   
   @Output() crearTarea: EventEmitter<ITarea> = new EventEmitter();
 

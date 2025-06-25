@@ -1,6 +1,7 @@
 <div class="lista">
     @for(tar of tareas; track $index){
         <app-card-tarea [tarea]="tar"></app-card-tarea>
+        <button (click)="delClick($index)">borrar</button>
     }@empty {
         <h3>NO HAY TAREAS</h3>
     }
