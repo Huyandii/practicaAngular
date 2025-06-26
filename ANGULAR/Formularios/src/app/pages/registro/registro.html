@@ -1,0 +1,55 @@
+<button (click)="onClick()">Valores por defectp</button>
+<div>
+    <p>Form VALID {{registroForm.valid}}</p>
+    <p>Form INVALID {{registroForm.invalid}}</p>
+    <p>Control Nombre Valid: {{registroForm.get('nombre')?.valid}}</p>
+    <p>Control Nombre Touched: {{registroForm.get('nombre')?.touched}}</p>
+</div>
+
+
+<form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
+
+    <div class="mb-3 bg-dark bg-gradient">
+
+        <!-- NOMBRE ---------------------->
+        <label class="form-label">Nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+        <!--nombre definifo en el ts-->
+
+        <!-- APELLIDOS ------------------->
+        <label class="form-label">Apellidos</label>
+        <input type="text" class="form-control" formControlName="apellidos">
+
+        <!-- EDAD ----------------------------->
+        <label class="form-label">edad</label>
+        <input type="number" class="form-control" formControlName="edad">
+
+        <!-- EMAIL------------------------ -->
+        <label class="form-label">email</label>
+        <input type="email" class="form-control" formControlName="email">
+
+        <!-- TELEFONO -------------------------->
+        <label class="form-label">Telefono</label>
+        <input type="tel" class="form-control" formControlName="telefono">
+
+        <!-- DNI ---------------------------->
+        <label class="form-label">DNI</label>
+        <input type="text" class="form-control" formControlName="dni">
+
+        <!-- CONTRASEÑA ----------------------->
+        <label class="form-label">password</label>
+        <input type="password" class="form-control" formControlName="password">
+
+        <!-- REPETIR CONTRASEÑA -->
+        <label class="form-label">repite password</label>
+        <input type="password" class="form-control" formControlName="repite_password">
+
+
+        <!--BOTON ENVIAR -->
+
+        <input type="submit" value="Enviar" class="btn btn-warning mt-4" [disabled]="!registroForm.valid">
+
+
+    </div>
+
+</form>
