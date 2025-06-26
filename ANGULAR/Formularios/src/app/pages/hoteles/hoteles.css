@@ -1,0 +1,15 @@
+form{
+     background: linear-gradient(45deg, #015fb2, #f9b238);
+     border-radius: 15px;
+}
+
+input.ng-invalid.ng-touched{
+    border: 2px solid red;
+  
+}
+
+input.ng-valid.ng-touched{
+       border: 2px solid lime;
+}
+
+ 

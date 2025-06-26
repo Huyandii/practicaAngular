@@ -62,14 +62,6 @@ export class Registro {
 
   onClick() {
 
-    //   set value necesita el objeto completo
-    //   this.registroForm.setValue(
-    //     nombre: 'Mario',
-    //     apellidos: 'Giron',
-    //     .....
-    //   )
-    // }
-
     // Mientras que patchValue puede recibir los objetos que se desee dentro de los que estan disponibles en el formulario
     this.registroForm.patchValue({
       nombre: 'Mario', telefono: 5432432, email: 'vbfhdjsik@gmail.com'

@@ -1,0 +1,45 @@
+<button (click)="onClick()">Valores por defectp</button>
+
+
+
+
+<form [formGroup]="hotelForm"  (ngSubmit)="onSubmit()" class="mt-5">
+
+    <div>
+        <label class="form-label">nombre</label>
+        <input type="text" class="form-control" formControlName="nombre">
+    </div>
+
+    <div>
+        <label class="form-label">email</label>
+        <input type="email" class="form-control" formControlName="email">
+    </div>
+
+
+    <div>
+        <label class="form-label">Fecha de entrada</label>
+        <input type="date" class="form-control" formControlName="entrada">
+    </div>
+
+    <div>
+        <label class="form-label">Fecha de salida</label>
+        <input type="date" class="form-control" formControlName="salidad">
+    </div>
+
+    <div>
+        <label class="form-label">Numero de personas</label>
+        <input type="number" class="form-control" formControlName="numPersonas">
+    </div>
+    <div>
+        <label class="form-label">Acepta los terminos</label>
+        <input type="checkbox" formControlName="terminos">
+    </div>
+
+    <div>
+        <label class="form-label ">Codigo promocional</label>
+        <input type="text" class="form-control" formControlName="codPromocion">
+    </div>
+
+    <input  type="submit"  value="Enviar" class="mt-4 btn btn-warning" [disabled]="!hotelForm.valid">
+
+</form>
