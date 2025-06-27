@@ -2,10 +2,20 @@ input.ng-invalid.ng-touched{
     border: 2px solid red;
   
 }
-
 input.ng-valid.ng-touched{
        border: 2px solid lime;
 }
 
  
-
+.error{
+    margin-left: 4px;
+    color:red;
+    font-size: 13px;
+    font-family: Arial, Helvetica, sans-serif;
+    transition-duration: inherit;
+    transition: 0.5s;
+}
+.error:after{
+    color: aqua;
+ 
+}

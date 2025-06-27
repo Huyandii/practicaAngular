@@ -13,52 +13,33 @@ export class Registro {
   //  ESTO ES EL FORMGROUP DEL HTML
   registroForm: FormGroup = new FormGroup({
 
-    nombre: new FormControl(null, [
-      Validators.required,
-      Validators.minLength(3)
-    ]),
+    nombre: new FormControl(null, [Validators.required, Validators.minLength(3)]),
 
-    apellidos: new FormControl(null, [
-      Validators.maxLength(12)
-    ]),
+    apellidos: new FormControl(null, [Validators.maxLength(12)]),
 
-    edad: new FormControl(null, [
-      this.edadValidator
-      // la funcion esta abajo
-    ]),
+    edad: new FormControl(null, [this.edadValidator]),
 
+    email: new FormControl(null, [Validators.required, Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)]),
 
-    email: new FormControl(null, [
-      Validators.required,
-      Validators.pattern(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)
-    ]
-    ),
     telefono: new FormControl(),
 
+    dni: new FormControl(null, [this.dniValidator, Validators.required]),
 
-    dni: new FormControl(null, [
-      this.dniValidator
-    ]),
+    password: new FormControl(null, [Validators.required, Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{5,10}$/)]),
+    //contraseña aA123!
 
-
-    password: new FormControl(null, [
-      Validators.required,
-
-
-      Validators.pattern(/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\w\s]).{5,10}$/)
-    ]),
     repite_password: new FormControl()
-  });
+  }, [this.passwordValidator]);
+
 
   onSubmit() {
+    this.registroForm.markAllAsTouched
     if (this.registroForm.valid) {
       console.log(this.registroForm.value);
-    }else{
+    } else {
       alert('revisa el formulario')
     }
   }
-
-
 
   onClick() {
 
@@ -67,8 +48,6 @@ export class Registro {
       nombre: 'Mario', telefono: 5432432, email: 'vbfhdjsik@gmail.com'
     })
   }
-
-
 
   edadValidator(control: AbstractControl) {
     // reciben el control sobre el cual queremos realizar la validacion 
@@ -85,15 +64,6 @@ export class Registro {
       return { edadvalidator: true };
     }
   }
-
-
-
-
-
-
-
-
-
 
   dniValidator(control: AbstractControl) {
 
@@ -117,14 +87,23 @@ export class Registro {
     return null;
   }
 
+  passwordValidator(form: AbstractControl) {
+    // extraer los valores de password y repite passworrd
+    const passwordValue = form.get('password')?.value;
+    const repitePasswordValue = form.get('repite_password')?.value
 
+    if (passwordValue !== repitePasswordValue) {
+      form.get('repite_password')?.setErrors({ passwordvalidator: true })
+      return { passwordvalidator: true }
+    }
 
+    return null;
+  }
 
+  checkError(field: string, error: string) {
+    return this.registroForm.get(field)?.hasError(error) && this.registroForm.get(field)?.touched;
 
+  }
 
-
-
-
-
-
+  // ><><><><><><><><><><><><><><><><><><><><v><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><><
 }

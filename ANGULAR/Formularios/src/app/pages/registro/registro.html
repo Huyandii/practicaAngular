@@ -1,55 +1,88 @@
+
 <button (click)="onClick()">Valores por defectp</button>
 <div>
     <p>Form VALID {{registroForm.valid}}</p>
     <p>Form INVALID {{registroForm.invalid}}</p>
     <p>Control Nombre Valid: {{registroForm.get('nombre')?.valid}}</p>
     <p>Control Nombre Touched: {{registroForm.get('nombre')?.touched}}</p>
+    <p>Error required: {{registroForm.get('nombre')?.hasError('required')}}</p>
+    <p>Error minLength: {{registroForm.get('nombre')?.hasError('minlength')}}</p>
+
 </div>
+<!-- formulario -->
+<form class="bg-dark bg-gradient" [formGroup]="registroForm" (ngSubmit)="onSubmit()">
 
-
-<form [formGroup]="registroForm" (ngSubmit)="onSubmit()">
-
-    <div class="mb-3 bg-dark bg-gradient">
-
+    <div class="mb-3 ">
         <!-- NOMBRE ---------------------->
         <label class="form-label">Nombre</label>
         <input type="text" class="form-control" formControlName="nombre">
+        @if(checkError('nombre', 'required')){<p class="error">Campo obligatorio</p>}
+        @if(checkError('nombre', 'minlength')){<p class="error">Minimo 3 caracteres </p>}
         <!--nombre definifo en el ts-->
+    </div>
 
+
+
+    <div class="mb-3 ">
         <!-- APELLIDOS ------------------->
         <label class="form-label">Apellidos</label>
         <input type="text" class="form-control" formControlName="apellidos">
+        @if(checkError('apellidos', 'maxlength')){<p>superado el maximo de caracteres </p>}
+    </div>
 
+
+    <div class="mb-3 ">
         <!-- EDAD ----------------------------->
         <label class="form-label">edad</label>
         <input type="number" class="form-control" formControlName="edad">
+        @if(checkError('edad', 'edadvalidator')){
+        <p class="error">edad incorrecta</p>
+        }
+    </div>
 
+
+    <div class="mb-3 ">
         <!-- EMAIL------------------------ -->
         <label class="form-label">email</label>
         <input type="email" class="form-control" formControlName="email">
+        @if(checkError('email', 'required')){<p class="error">email obligatorio</p>}
+    </div>
 
+    <div class="mb-3 ">
         <!-- TELEFONO -------------------------->
         <label class="form-label">Telefono</label>
         <input type="tel" class="form-control" formControlName="telefono">
+    </div>
 
+    <div class="mb-3 ">
         <!-- DNI ---------------------------->
         <label class="form-label">DNI</label>
         <input type="text" class="form-control" formControlName="dni">
-
-        <!-- CONTRASEÑA ----------------------->
-        <label class="form-label">password</label>
-        <input type="password" class="form-control" formControlName="password">
-
-        <!-- REPETIR CONTRASEÑA -->
-        <label class="form-label">repite password</label>
-        <input type="password" class="form-control" formControlName="repite_password">
-
-
-        <!--BOTON ENVIAR -->
-
-        <input type="submit" value="Enviar" class="btn btn-warning mt-4" [disabled]="!registroForm.valid">
-
+        @if(checkError('dni', 'required')){<p class="error">Campo obligatorio</p>}
+        @if(checkError('dni', 'dnivalidator')){<p class="error">El campo no es correcto</p>}
 
     </div>
 
+    <div class="mb-3 ">
+        <!-- CONTRASEÑA ----------------------->
+        <label class="form-label">password</label>
+        <input type="password" class="form-control" formControlName="password">
+        @if(checkError('password', 'required')){<p class="error">Campo obligatorio</p>}
+    </div>
+
+    <div class="mb-3 ">
+        <!-- REPETIR CONTRASEÑA -->
+        <label class="form-label">repite password</label>
+        <input type="password" class="form-control" formControlName="repite_password">
+        
+    </div>
+
+
+
+    <!--BOTON ENVIAR -->
+
+    <input type="submit" value="Enviar" class="btn btn-warning mt-4" [disabled]="!registroForm.valid">
+
+
 </form>
+<!-- fin formulario -->
