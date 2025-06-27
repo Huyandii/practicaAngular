@@ -15,6 +15,9 @@ export class ProductsService {
   // como hacemos peticiones en angular (http)
   httpClient = inject(HttpClient);
 
+
+
+
   getAll(page: number = 1) {
     // GET https://peticiones.online/api/products
 
@@ -23,5 +26,14 @@ export class ProductsService {
     );
 
   }
+
+
+
+
+
+
+
+
+
 }
 // 

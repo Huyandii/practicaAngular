@@ -14,11 +14,10 @@ export class ProductsList {
 
   arrProductos: IProducts[] = [];
   page: number = 1;
-  totalPages:number  = 0
+  totalPages: number = 0
 
 
   async ngOnInit() {
-
 
     const response = await this.productService.getAll();
     this.arrProductos = response.results;
@@ -28,16 +27,16 @@ export class ProductsList {
 
   async onClick(avanzar: boolean) {
     // this.page = avanzar ? this.page + 1 : this.page - 1;
-    if(avanzar){
-      if(this.page !== this.totalPages)
-      this.page++;
-      
-    }else{
-      if(this.page !== 1)
-      this.page--;
+    if (avanzar) {
+      if (this.page !== this.totalPages)
+        this.page++;
+
+    } else {
+      if (this.page !== 1)
+        this.page--;
     }
-    
-     const response = await this.productService.getAll();
+
+    const response = await this.productService.getAll();
     this.arrProductos = response.results;
 
   }

@@ -1,0 +1,19 @@
+
+
+    @for (dato of arrUsers; track dato._id) {
+
+    <article>
+
+        <h3>{{dato.first_name}}</h3>
+        <h3>{{dato.last_name}}</h3>
+        <img [src]="dato.image" alt="">
+        <ul>
+            <li>{{dato.username}}</li>
+            <li>{{dato.email}}</li>
+            <li>{{dato.password}}</li>
+        </ul>
+
+    </article>
+
+    }
+
