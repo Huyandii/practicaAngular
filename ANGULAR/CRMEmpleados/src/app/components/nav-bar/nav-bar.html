@@ -1,0 +1,30 @@
+<nav>
+    <ul>
+        @if (usuarioservice.isLogged()) {
+        <li [routerLink]="['/empleados']">
+            <lucide-angular [img]="FileIcon" class="my-icon"></lucide-angular>
+            Lista empleados
+        </li>
+
+        <li [routerLink]="['/empleados', 'nuevo']">
+            <lucide-angular [img]="FileIcon" class="my-icon"></lucide-angular>
+            Nuevo empleado
+        </li>
+        <li>
+            <button class=" btn btn-warning" (click)="onClick()">Salir</button>
+        </li>
+        }@else{
+
+        <li [routerLink]="['/login']">
+            <lucide-angular [img]="FileIcon" class="my-icon"></lucide-angular>
+            Login
+        </li>
+
+        <li [routerLink]="['/registro']">
+            <lucide-angular [img]="FileIcon" class="my-icon"></lucide-angular>
+            Registro mi rey
+        </li>
+
+        }
+    </ul>
+</nav>

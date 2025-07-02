@@ -1,0 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Modak:regular);
+
+
+/* You can add global styles to this file, and also import other style files */
+:root{
+    --color-primario: beige;
+
+}
+h1, h2, h3, h4{
+    font-family: 'Courier New', Courier, monospace;
+}

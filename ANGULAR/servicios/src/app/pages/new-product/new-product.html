@@ -1,0 +1,35 @@
+<form [formGroup]="newProductForm" (ngSubmit)="onSubmit()">
+
+    <div class="m-3">
+        <label class="form-label">name</label>
+        <input type="text" class="form-control" formControlName="name">
+    </div>
+
+    <div class="m-3">
+        <label class="form-label">Description</label>
+        <input type="text" class="form-control" formControlName="description">
+    </div>
+
+    <div class="m-3">
+        <label class="form-label">price</label>
+        <input type="number" class="form-control" formControlName="price">
+    </div>
+
+    <div class="m-3">
+        <label class="form-label">category</label>
+        <input type="text" class="form-control" formControlName="category">
+    </div>
+
+    <div class="m-3">
+        <label class="form-label">image</label>
+        <input type="text" class="form-control" formControlName="image">
+    </div>
+
+    <div class="m-3">
+        <label class="form-check-label">active</label>
+        <input type="checkbox" class="form-check-input" formControlName="active">
+    </div>
+
+
+    <input type="submit" value="enviar" class="btn btn-warning">
+</form>

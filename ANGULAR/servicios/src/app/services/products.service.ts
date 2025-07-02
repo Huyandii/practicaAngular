@@ -9,11 +9,12 @@ type ApiRespuesta = {
 }
 
 @Injectable({
-  providedIn: 'root'
+    providedIn: 'root'
 })
 export class ProductsService {
   // como hacemos peticiones en angular (http)
-  httpClient = inject(HttpClient);
+  baseUrl: string = 'https://peticiones.online/api/products';
+    httpClient = inject(HttpClient);
 
 
 
@@ -22,17 +23,17 @@ export class ProductsService {
     // GET https://peticiones.online/api/products
 
     return lastValueFrom(
-      this.httpClient.get<ApiRespuesta>(`https://peticiones.online/api/products?page=${page}`)
+      this.httpClient.get<ApiRespuesta>(`${this.baseUrl}?page=${page}`)
     );
 
   }
 
 
-
-
-
-
-
+create(newProduct: IProducts){
+  return lastValueFrom(
+    this.httpClient.post<IProducts>(this.baseUrl, newProduct)
+  );
+}
 
 
 }

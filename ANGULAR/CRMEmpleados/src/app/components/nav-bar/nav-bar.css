@@ -1,0 +1,20 @@
+* {
+    display: flex;
+    justify-content: center;
+    color: antiquewhite;
+    background: linear-gradient(to right, #00c6ff, #0072ff);
+    
+
+
+}
+
+li {
+    
+    padding-top: 10px;
+    padding-inline: 100px;
+}
+
+button {
+    color: black;
+    background-color: yellow;
+}

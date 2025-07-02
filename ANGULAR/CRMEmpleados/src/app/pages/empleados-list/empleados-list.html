@@ -1,0 +1,25 @@
+<section>
+    <select (change)="onChange($event)">
+        <option value="">Todos</option>
+        <option value="direccion">Direccion</option>
+        <option value="recursoshumanos">Recursos Humanos</option>
+        <option value="desarrollo">desarrollo</option>
+        <option value="diseño">diseño</option>
+
+    </select>
+    @for (emp of arrEmpleados; track emp._id) {
+    <article class="empleado">
+
+        <h3>{{emp.nombre}} {{emp.apellidos}}</h3>
+        <div class="info">
+            <p>Email: {{emp.email}}</p>
+            <p>Departamento: {{emp.departamento}}</p>
+            <p>Salario: {{emp.salario}}</p>
+        </div>
+
+        <button [routerLink]="['/empleados', 'edit', emp._id]">Editar</button>
+        <button class="btn-warning" (click)="onClick(emp._id)">Borrar</button>
+        <button [routerLink]="['/empleados', 'detalle', emp._id]">more</button>
+    </article>
+    }
+</section>
